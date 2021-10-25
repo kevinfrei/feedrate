@@ -1,24 +1,26 @@
 .center-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 .divTable {
-  display: table;
+    display: table;
 }
 
 .header {
-  display: block;
+    display: block;
+    font-weight: bold;
 }
 
 .divRow {
-  display: table-row;
-  width: auto;
+    display: table-row;
+    width: auto;
 }
 
 .divCell {
-  display: table-cell;
+    display: table-cell;
+    padding: 5px;
 }

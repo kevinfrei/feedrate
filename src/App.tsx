@@ -211,47 +211,50 @@ function App() {
   }
 
   return (
-    <div className="center-screen">
-      <div>
-        <div className="header">Feed Rate Calculator</div>
-        <div className="divTable">
-          {dd('Select a machine', machineOptions, machine, setMachine)}
-          {dd('Cutter Diameter', cutWidthOptions, cutWidth, setcutWidth)}
-          {dd('# of Flutes', fluteOptions, numFlutes, setNumFlutes)}
-          {dd('Aggression', aggressionOptions, aggression, setAggression)}
-          {dd('Material', materialOptions, material, setMaterial)}
-          <div className="divRow">
-            <div className="divCell">RPM</div>
-            <div className="divCell">
-              <Slider
-                min={800}
-                max={25000}
-                value={rpmValue}
-                onChange={setRPMval}
-              />
+    <div>
+      <div className="center-screen">
+        <div>
+          <div className="header">Feed Rate Calculator</div>
+          <div className="divTable">
+            {dd('Select a machine', machineOptions, machine, setMachine)}
+            {dd('Cutter Diameter', cutWidthOptions, cutWidth, setcutWidth)}
+            {dd('# of Flutes', fluteOptions, numFlutes, setNumFlutes)}
+            {dd('Aggression', aggressionOptions, aggression, setAggression)}
+            {dd('Material', materialOptions, material, setMaterial)}
+            <div className="divRow">
+              <div className="divCell">RPM</div>
+              <div className="divCell">
+                <Slider
+                  min={800}
+                  max={25000}
+                  value={rpmValue}
+                  onChange={setRPMval}
+                />
+              </div>
             </div>
-          </div>
-          <div className="divRow">
-            <div className="divCell">OutputUnits</div>
-            <div className="divCell">
-              <ChoiceGroup
-                styles={{
-                  flexContainer: { display: 'flex' },
-                  root: { display: 'inline' },
-                }}
-                selectedKey={unit}
-                options={unitOptions}
-                onChange={(_ev: any, option?: IChoiceGroupOption) => {
-                  option && setUnit(option.key === 'mm' ? 'mm' : 'inch');
-                }}
-              />
+            <div className="divRow">
+              <div className="divCell">Output Units</div>
+              <div className="divCell">
+                <ChoiceGroup
+                  styles={{
+                    flexContainer: { display: 'flex' },
+                    root: { display: 'inline' },
+                  }}
+                  selectedKey={unit}
+                  options={unitOptions}
+                  onChange={(_ev: any, option?: IChoiceGroupOption) => {
+                    option && setUnit(option.key === 'mm' ? 'mm' : 'inch');
+                  }}
+                />
+              </div>
             </div>
+            {dt('Feed Rate', feedRate, 4, unit + '/min')}
+            {dt('Depth of Cut', depthOfCut, 4, unit)}
+            {dt('Chip Load', chipLoad, 6, unit)}
           </div>
-          {dt('Feed Rate', feedRate, 4, unit + '/min')}
-          {dt('Depth of Cut', depthOfCut, 4, unit)}
-          {dt('Chip Load', chipLoad, 6, unit)}
         </div>
       </div>
+      <a href="https://github.com/kevinfrei/feedrate" style={{position:'fixed', bottom:20, right: 20}}>Source Code</a>
     </div>
   );
 }
