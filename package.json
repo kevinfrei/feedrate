@@ -24,7 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/*.ts\" \"src/*.tsx\" \"*.json\" \"*.md\" \"src/*.css\" .prettierrc"
+    "format": "prettier --write \"src/*.ts\" \"src/*.tsx\" \"*.json\" \"*.md\" \"src/*.css\" .prettierrc",
+    "predeploy": "yarn run build",
+    "deploy": "yarn predeploy && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
