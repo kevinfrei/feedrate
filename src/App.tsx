@@ -254,7 +254,12 @@ function App() {
           </div>
         </div>
       </div>
-      <a href="https://github.com/kevinfrei/feedrate" style={{position:'fixed', bottom:20, right: 20}}>Source Code</a>
+      <a
+        href="https://github.com/kevinfrei/feedrate"
+        style={{ position: 'fixed', bottom: 20, right: 20 }}
+      >
+        Source Code
+      </a>
     </div>
   );
 }
